@@ -1,16 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Antd from 'ant-design-vue';
-import './registerServiceWorker'
 import router from './router'
-import '@/icons'
-
 import store from './store'
-
-
+import '@/icons'
 import './plugins/element.js'
-
 import 'ant-design-vue/dist/antd.css';
+import './registerServiceWorker'
+import '@/permission'
 
 Vue.use(Antd);
 
