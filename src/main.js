@@ -14,6 +14,12 @@ import 'ant-design-vue/dist/antd.css';
 
 Vue.use(Antd);
 
+if (process.env.NODE_ENV === 'production') {
+  const {
+    mockXHR
+  } = require('../mock')
+  mockXHR()
+}
 
 Vue.config.productionTip = false
 

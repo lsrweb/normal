@@ -1,14 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+
 
 Vue.use(VueRouter)
 
-const routes = [
+// 初始化路由
+const routes = [{
+    path: '/login',
+    component: () => import('@/views/Login'),
+    name: 'login'
+  },
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/dashboard',
+    component: () => import('@/views/Dashboard'),
+    name: 'home'
   }
 ]
 
