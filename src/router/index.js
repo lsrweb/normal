@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Layout from '@/layout'
+// No permission router
 export const constantRoutes = [
     {
         path: '/login',
@@ -25,18 +26,7 @@ export const constantRoutes = [
             path: 'dashboard',
             name: 'Dashboard',
             component: () => import('@/views/dashboard/index'),
-            meta: {title: 'Dashboard', icon: 'dashboard'}
-        }]
-    },
-    {
-        path: '/table',
-        component: Layout,
-        redirect: '/table',
-        children: [{
-            path: 'table',
-            name: 'table',
-            component: () => import('@/views/dashboard/index'),
-            meta: {title: 'Dashboard', icon: 'dashboard'}
+            meta: {title: '首页', icon: 'dashboard'}
         }]
     },
     {
@@ -44,25 +34,22 @@ export const constantRoutes = [
         component: Layout,
         children: [
             {
-                path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-                meta: {title: 'External Link', icon: 'link'}
+                path: 'http://srliforever.ltd/',
+                meta: {title: '友链', icon: 'link'}
             }
         ]
     },
-
-    // 404 page must be placed at the end !!!
     {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
-    // mode: 'history', // require service support
+    // mode: 'history',
     scrollBehavior: () => ({y: 0}),
     routes: constantRoutes
 })
 
 const router = createRouter()
 
-// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
     const newRouter = createRouter()
     router.matcher = newRouter.matcher // reset router
