@@ -39,7 +39,7 @@ export const constantRoutes = [
             }
         ]
     },
-    {path: '*', redirect: '/404', hidden: true}
+    {path: '*', component: () => import('@/views/404')}
 ]
 
 const createRouter = () => new Router({
