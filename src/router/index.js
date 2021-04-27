@@ -3,15 +3,14 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-/* Layout */
 import Layout from '@/layout'
-
 export const constantRoutes = [
     {
         path: '/login',
         component: () => import('@/views/login/index'),
         hidden: true
     },
+
     {
         path: '/404',
         component: () => import('@/views/404'),
@@ -26,34 +25,38 @@ export const constantRoutes = [
             path: 'dashboard',
             name: 'Dashboard',
             component: () => import('@/views/dashboard/index'),
-            meta: {
-                title: '首页',
-                icon: 'dashboard'
-            }
+            meta: {title: 'Dashboard', icon: 'dashboard'}
         }]
     },
     {
-        path: 'external-link',
+        path: '/table',
         component: Layout,
+        redirect: '/table',
         children: [{
-            path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-            meta: {
-                title: 'External Link',
-                icon: 'happy'
-            }
+            path: 'table',
+            name: 'table',
+            component: () => import('@/views/dashboard/index'),
+            meta: {title: 'Dashboard', icon: 'dashboard'}
         }]
     },
     {
-        path: '*',
-        component: () => import('@/views/404')
-    }
+        path: '/external-link',
+        component: Layout,
+        children: [
+            {
+                path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+                meta: {title: 'External Link', icon: 'link'}
+            }
+        ]
+    },
+
+    // 404 page must be placed at the end !!!
+    {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
-    mode: 'hash', // require service support
-    scrollBehavior: () => ({
-        y: 0
-    }),
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({y: 0}),
     routes: constantRoutes
 })
 

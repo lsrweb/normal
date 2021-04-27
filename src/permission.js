@@ -74,7 +74,6 @@ function routerGo(to, next) {
 function saveObjArr(name, data) {
     localStorage.setItem(name, JSON.stringify(data))
 }
-
 function filterAsyncRouter(asyncRouterMap) {
     const accessedRouters = asyncRouterMap.filter(route => {
         if (route.component) {
