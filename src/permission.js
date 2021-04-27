@@ -1,25 +1,24 @@
-import router from './router' // 导入路由
-import store from './store' // 导入 store
+import router from './router'
+import store from './store'
 import {
     Message
-} from 'element-ui' // 导入信息提示
-import NProgress from 'nprogress' // 导入进度条
-import 'nprogress/nprogress.css' // 导入进度条样式
+} from 'element-ui'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 import {
     getToken
-} from '@/utils/auth' // 导入获取用户信息函数
-import getPageTitle from '@/utils/get-page-title' // 获取页面标题
-import Layout from '@/layout' // 导入 Layout组件
-// import Cookies from 'js-cookie' // 导入js-cookie管理
+} from '@/utils/auth'
+import getPageTitle from '@/utils/get-page-title'
+import Layout from '@/layout'
+// import Cookies from 'js-cookie'
 NProgress.configure({
-    showSpinner: true // 进度条配置 加载圈圈
+    showSpinner: true
 })
 let getRouter
 
 const whiteList = ['/login']
-
 router.beforeEach(async (to, from, next) => {
-    NProgress.start() // 进度条开始
+    NProgress.start()
     document.title = getPageTitle(to.meta.title)
 
     const hasToken = getToken()
@@ -28,8 +27,8 @@ router.beforeEach(async (to, from, next) => {
             next({
                 path: '/'
             })
-            NProgress.done() // 进度条结束
-        } else { // 判断无 token
+            NProgress.done()
+        } else {
             const hasGetUserInfo = store.getters.name
             if (hasGetUserInfo) {
                 next()
@@ -38,14 +37,12 @@ router.beforeEach(async (to, from, next) => {
                     await store.dispatch('user/getInfo')
                     await store.dispatch('user/getRouter')
                     const router = store.getters.routerList
-                    console.log(router)
                     getRouter = router
                     saveObjArr('router', getRouter)
                     routerGo(to, next)
                 } catch (error) {
-                    console.log(error)
                     await store.dispatch('user/resetToken')
-                    Message.error('出现错误,请刷新页面重新尝试!')
+                    Message.error(error || '出现错误,请刷新页面重新尝试!')
                     next(`/login?redirect=${to.path}`)
                     NProgress.done()
                 }
