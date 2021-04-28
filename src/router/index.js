@@ -8,7 +8,7 @@ import Layout from '@/layout'
 export const constantRoutes = [
     {
         path: '/login',
-        component: () => import('@/views/login/index'),
+        component: () => import('@/views/Login/index'),
         hidden: true
     },
 
@@ -25,7 +25,7 @@ export const constantRoutes = [
         children: [{
             path: 'dashboard',
             name: 'Dashboard',
-            component: () => import('@/views/dashboard/index'),
+            component: () => import('@/views/Dashboard/index'),
             meta: {title: '首页', icon: 'dashboard'}
         }]
     },
