@@ -1,29 +1,58 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Router from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+import Layout from '@/layout'
+// No permission router
+export const constantRoutes = [
+    {
+        path: '/login',
+        component: () => import('@/views/Login/index'),
+        hidden: true
+    },
+
+    {
+        path: '/404',
+        component: () => import('@/views/404'),
+        hidden: true
+    },
+
+    {
+        path: '/',
+        component: Layout,
+        redirect: '/dashboard',
+        children: [{
+            path: 'dashboard',
+            name: 'Dashboard',
+            component: () => import('@/views/Dashboard/index'),
+            meta: {title: '首页', icon: 'dashboard'}
+        }]
+    },
+    {
+        path: '/external-link',
+        component: Layout,
+        children: [
+            {
+                path: 'http://srliforever.ltd/',
+                meta: {title: '友链', icon: 'link'}
+            }
+        ]
+    },
+    {path: '*', component: () => import('@/views/404')}
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+const createRouter = () => new Router({
+    mode: 'history',
+    scrollBehavior: () => ({y: 0}),
+    routes: constantRoutes
 })
+
+const router = createRouter()
+
+export function resetRouter() {
+    const newRouter = createRouter()
+    router.matcher = newRouter.matcher
+}
 
 export default router
