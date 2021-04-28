@@ -10,7 +10,8 @@ const name = defaultSettings.title || '后台基础模板'
 
 const port = process.env.port || process.env.npm_config_port || 9528
 module.exports = {
-    publicPath: '/normal',
+    publicPath: '.+' +
+        '/',
     outputDir: 'dist',
     assetsDir: 'static',
     lintOnSave: process.env.NODE_ENV === 'development',
