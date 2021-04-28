@@ -1,7 +1,7 @@
 <template>
   <section class="app-main">
-    <transition name="fade-transform" mode="out-in">
-      <router-view :key="key" />
+    <transition mode="out-in" name="fade-transform">
+      <router-view :key="key"/>
     </transition>
   </section>
 </template>
@@ -26,13 +26,13 @@ export default {
   overflow: hidden;
   background-color: #ffffff;
 }
-.fixed-header+.app-main {
+
+.fixed-header + .app-main {
   padding-top: 50px;
 }
 </style>
 
 <style lang="scss">
-// fix css style bug in open el-dialog
 .el-popup-parent--hidden {
   .fixed-header {
     padding-right: 15px;

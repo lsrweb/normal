@@ -1,6 +1,6 @@
 const router = [
     {
-        path: 'permission',
+        path: '/permission',
         component: 'Layout',
         name: 'permission',
         redirect: '/index',
@@ -28,8 +28,8 @@ const router = [
                 },
                 children: [
                     {
-                        path: '/test',
-                        name: 'test',
+                        path: '/tests',
+                        name: 'tests',
                         component: '/table/test',
                         meta: {
                             title: '测试三级',
@@ -38,7 +38,7 @@ const router = [
                     },
                     {
                         path: '/test',
-                        name: 'test',
+                        name: 'testf',
                         component: '/table/test',
                         meta: {
                             title: '测试三级',
@@ -54,7 +54,7 @@ const router = [
                                     icon: 'happy'
                                 }
                             }, {
-                                path: '/four',
+                                path: '/fourtwo',
                                 name: 'foura',
                                 component: '/table/test',
                                 meta: {

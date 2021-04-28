@@ -43,7 +43,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () => new Router({
-    // mode: 'history',
+    mode: 'history',
     scrollBehavior: () => ({y: 0}),
     routes: constantRoutes
 })
@@ -52,7 +52,7 @@ const router = createRouter()
 
 export function resetRouter() {
     const newRouter = createRouter()
-    router.matcher = newRouter.matcher // reset router
+    router.matcher = newRouter.matcher
 }
 
 export default router
