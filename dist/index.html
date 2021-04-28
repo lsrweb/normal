@@ -6,28 +6,28 @@
     <meta content="webkit" name="renderer">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <script src="live2dw/lib/L2Dwidget.min.js"></script>
-    <link href="/dist/favicon.ico" rel="icon">
+    <link href="/favicon.ico" rel="icon">
     <title>后台基础模板</title>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <link as="style" href="/dist/static/css/app.3056b20f.css" rel="preload">
-    <link as="style" href="/dist/static/css/chunk-elementUI.16da611a.css" rel="preload">
-    <link as="style" href="/dist/static/css/chunk-libs.902ebb66.css" rel="preload">
-    <link as="script" href="/dist/static/js/app.e99d0f09.js" rel="preload">
-    <link as="script" href="/dist/static/js/chunk-elementUI.2877066c.js" rel="preload">
-    <link as="script" href="/dist/static/js/chunk-libs.fe7d5b70.js" rel="preload">
-    <link href="/dist/static/css/chunk-elementUI.16da611a.css" rel="stylesheet">
-    <link href="/dist/static/css/chunk-libs.902ebb66.css" rel="stylesheet">
-    <link href="/dist/static/css/app.3056b20f.css" rel="stylesheet">
-    <link href="/dist/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-    <link href="/dist/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-    <link href="/dist/manifest.json" rel="manifest">
+    <link as="style" href="/static/css/app.3056b20f.css" rel="preload">
+    <link as="style" href="/static/css/chunk-elementUI.16da611a.css" rel="preload">
+    <link as="style" href="/static/css/chunk-libs.902ebb66.css" rel="preload">
+    <link as="script" href="/static/js/app.e99d0f09.js" rel="preload">
+    <link as="script" href="/static/js/chunk-elementUI.2877066c.js" rel="preload">
+    <link as="script" href="/static/js/chunk-libs.fe7d5b70.js" rel="preload">
+    <link href="/static/css/chunk-elementUI.16da611a.css" rel="stylesheet">
+    <link href="/static/css/chunk-libs.902ebb66.css" rel="stylesheet">
+    <link href="/static/css/app.3056b20f.css" rel="stylesheet">
+    <link href="/img/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="/img/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="/manifest.json" rel="manifest">
     <meta content="#4DBA87" name="theme-color">
     <meta content="no" name="apple-mobile-web-app-capable">
     <meta content="default" name="apple-mobile-web-app-status-bar-style">
     <meta content="normal" name="apple-mobile-web-app-title">
-    <link href="/dist/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
-    <link color="#4DBA87" href="/dist/img/icons/safari-pinned-tab.svg" rel="mask-icon">
-    <meta content="/dist/img/icons/msapplication-icon-144x144.png" name="msapplication-TileImage">
+    <link href="/img/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+    <link color="#4DBA87" href="/img/icons/safari-pinned-tab.svg" rel="mask-icon">
+    <meta content="/img/icons/msapplication-icon-144x144.png" name="msapplication-TileImage">
     <meta content="#000000" name="msapplication-TileColor">
 </head>
 <body>
@@ -39,7 +39,7 @@
 </div>
 <script>(function (e) {
     function r(r) {
-        for (var n, i, l = r[0], a = r[1], f = r[2], c = 0, s = []; c < l.length; c++) i = l[c], Object.prototype.hasOwnProperty.call(o, i) && o[i] && s.push(o[i][0]), o[i] = 0;
+        for (var n, l, i = r[0], a = r[1], f = r[2], c = 0, s = []; c < i.length; c++) l = i[c], Object.prototype.hasOwnProperty.call(o, l) && o[l] && s.push(o[l][0]), o[l] = 0;
         for (n in a) Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n]);
         p && p(r);
         while (s.length) s.shift()();
@@ -48,53 +48,53 @@
 
     function t() {
         for (var e, r = 0; r < u.length; r++) {
-            for (var t = u[r], n = !0, l = 1; l < t.length; l++) {
-                var a = t[l];
+            for (var t = u[r], n = !0, i = 1; i < t.length; i++) {
+                var a = t[i];
                 0 !== o[a] && (n = !1)
             }
-            n && (u.splice(r--, 1), e = i(i.s = t[0]))
+            n && (u.splice(r--, 1), e = l(l.s = t[0]))
         }
         return e
     }
 
     var n = {}, o = {runtime: 0}, u = [];
 
-    function i(r) {
+    function l(r) {
         if (n[r]) return n[r].exports;
         var t = n[r] = {i: r, l: !1, exports: {}};
-        return e[r].call(t.exports, t, t.exports, i), t.l = !0, t.exports
+        return e[r].call(t.exports, t, t.exports, l), t.l = !0, t.exports
     }
 
-    i.m = e, i.c = n, i.d = function (e, r, t) {
-        i.o(e, r) || Object.defineProperty(e, r, {enumerable: !0, get: t})
-    }, i.r = function (e) {
+    l.m = e, l.c = n, l.d = function (e, r, t) {
+        l.o(e, r) || Object.defineProperty(e, r, {enumerable: !0, get: t})
+    }, l.r = function (e) {
         "undefined" !== typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(e, "__esModule", {value: !0})
-    }, i.t = function (e, r) {
-        if (1 & r && (e = i(e)), 8 & r) return e;
+    }, l.t = function (e, r) {
+        if (1 & r && (e = l(e)), 8 & r) return e;
         if (4 & r && "object" === typeof e && e && e.__esModule) return e;
         var t = Object.create(null);
-        if (i.r(t), Object.defineProperty(t, "default", {enumerable: !0, value: e}), 2 & r && "string" != typeof e) for (var n in e) i.d(t, n, function (r) {
+        if (l.r(t), Object.defineProperty(t, "default", {enumerable: !0, value: e}), 2 & r && "string" != typeof e) for (var n in e) l.d(t, n, function (r) {
             return e[r]
         }.bind(null, n));
         return t
-    }, i.n = function (e) {
+    }, l.n = function (e) {
         var r = e && e.__esModule ? function () {
             return e["default"]
         } : function () {
             return e
         };
-        return i.d(r, "a", r), r
-    }, i.o = function (e, r) {
+        return l.d(r, "a", r), r
+    }, l.o = function (e, r) {
         return Object.prototype.hasOwnProperty.call(e, r)
-    }, i.p = "/dist/";
-    var l = window["webpackJsonp"] = window["webpackJsonp"] || [], a = l.push.bind(l);
-    l.push = r, l = l.slice();
-    for (var f = 0; f < l.length; f++) r(l[f]);
+    }, l.p = "/";
+    var i = window["webpackJsonp"] = window["webpackJsonp"] || [], a = i.push.bind(i);
+    i.push = r, i = i.slice();
+    for (var f = 0; f < i.length; f++) r(i[f]);
     var p = a;
     t()
 })([]);</script>
-<script src="/dist/static/js/chunk-elementUI.2877066c.js"></script>
-<script src="/dist/static/js/chunk-libs.fe7d5b70.js"></script>
-<script src="/dist/static/js/app.e99d0f09.js"></script>
+<script src="/static/js/chunk-elementUI.2877066c.js"></script>
+<script src="/static/js/chunk-libs.fe7d5b70.js"></script>
+<script src="/static/js/app.e99d0f09.js"></script>
 </body>
 </html>
