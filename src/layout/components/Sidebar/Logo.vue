@@ -24,11 +24,12 @@ export default {
   },
   data() {
     return {
-      title: '后台基础模板',
-      logo: ''
+      title: '悠贝后台管理',
+      logo: 'https://portrait.gitee.com/uploads/avatars/user/1847/5541591_siri729_1620646394.png!avatar30'
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -79,4 +80,5 @@ export default {
     }
   }
 }
+
 </style>

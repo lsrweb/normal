@@ -1,6 +1,6 @@
 module.exports = {
     title: '后台基础模板',
-    fixedHeader: false,
+    fixedHeader: true,
     sidebarLogo: false
 }
 
