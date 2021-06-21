@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Layout from '@/layout'
 
 Vue.use(Router)
 
-import Layout from '@/layout'
 export const constantRoutes = [{
 		path: '/login',
 		component: () => import('@/views/Login/index'),
@@ -47,11 +47,11 @@ export const constantRoutes = [{
 ]
 
 const createRouter = () => new Router({
-	mode: 'history',
-	scrollBehavior: () => ({
-		y: 0
+	mode:'hash',
+	scrollBehavior:() => ({
+		y:0
 	}),
-	routes: constantRoutes
+	routes:constantRoutes
 })
 
 const router = createRouter()
