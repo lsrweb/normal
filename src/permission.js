@@ -13,7 +13,7 @@ import Layout from '@/layout'
 NProgress.configure({
 	showSpinner: true
 })
-import Cookies from 'js-cookie'
+// import Cookies from 'js-cookie'
 
 let getRouter
 
